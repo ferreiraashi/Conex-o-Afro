@@ -1,0 +1,74 @@
+body {
+    background-color: #000;
+    font-family: Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#title{
+    color: aqua;
+}
+
+.container {
+    text-align: center;
+}
+
+button {
+    margin: 10px;
+    padding: 35px 70px; /* Aumentei o padding para botões maiores */
+    font-size: 18px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+/* Adicionando classe para a animação de seleção */
+.palavra-btn-selected {
+    background-color: #27ae60 !important;
+}
+
+/* Estilos para o card do contexto */
+.card-contexto {
+    background-color: #ecf0f1;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+    padding: 20px; /* Ajustei o padding para espaçamento interno */
+    margin-bottom: 20px;
+    text-align: center; /* Centraliza o texto */
+}
+
+.card-contexto h2 {
+    font-size: 24px; /* Ajuste o tamanho do título conforme necessário */
+    margin-bottom: 10px; /* Adiciona espaço entre o título e a descrição */
+}
+
+.palavra-btn-error {
+    animation: blink 0.5s ease-in-out;
+}
+
+@keyframes blink {
+    0%, 100% {
+        background-color: rgb(221, 1, 1);
+        color: white;
+    }
+    50% {
+        background-color: initial;
+        color: initial;
+    }
+}
