@@ -9,11 +9,26 @@ function shuffleArray(array) {
 
 // Lista de contextos do jogo
 const contextosDoJogo = [
-    { palavras: ["palavra1", "palavra2", "palavra3", "palavra4"], descricao: "Contexto 1: Descrição do contexto 1" },
-    { palavras: ["palavra5", "palavra6", "palavra7", "palavra8"], descricao: "Contexto 2: Descrição do contexto 2" },
-    { palavras: ["palavra9", "palavra10", "palavra11", "palavra12"], descricao: "Contexto 3: Descrição do contexto 3" },
-    { palavras: ["palavra13", "palavra14", "palavra15", "palavra16"], descricao: "Contexto 4: Descrição do contexto 4" },
-    { palavras: ["palavra17", "palavra18", "palavra19", "palavra20"], descricao: "Contexto 5: Descrição do contexto 5" }
+    { 
+        palavras: ["palavra1", "palavra2", "palavra3", "palavra4"], 
+        titulo: "Título do Contexto 1",
+        descricao: "Descrição do contexto 1" 
+    },
+    { 
+        palavras: ["palavra5", "palavra6", "palavra7", "palavra8"], 
+        titulo: "Título do Contexto 2",
+        descricao: "Descrição do contexto 2" 
+    },
+    { 
+        palavras: ["palavra9", "palavra10", "palavra11", "palavra12"], 
+        titulo: "Título do Contexto 3",
+        descricao: "Descrição do contexto 3" 
+    },
+    { 
+        palavras: ["palavra13", "palavra14", "palavra15", "palavra16"], 
+        titulo: "Título do Contexto 4",
+        descricao: "Descrição do contexto 4" 
+    }
 ];
 
 // Embaralha os contextos
@@ -53,21 +68,27 @@ function selecionarPalavra(palavra) {
         if (contextoEncontrado) {
             const cardContexto = document.createElement('div');
             cardContexto.className = 'card-contexto';
+            
+            // Adiciona o título específico do contexto
+            const tituloElement = document.createElement('h2');
+            tituloElement.textContent = contextoEncontrado.titulo;
+            cardContexto.appendChild(tituloElement);
 
+            
+            // Adiciona a descrição
             const descricaoElement = document.createElement('p');
             descricaoElement.textContent = contextoEncontrado.descricao;
-
             cardContexto.appendChild(descricaoElement);
-
+            
             // Adiciona as palavras ao card do contexto
             contextoEncontrado.palavras.forEach(palavra => {
                 const palavraElement = document.getElementById(`btn${palavra}`);
                 palavraElement.classList.add('palavra-btn-contexto');
                 cardContexto.appendChild(palavraElement);
             });
-
+            
             // Adiciona o card do contexto ao topo do elemento de contextos
-            document.getElementById('contextos').insertBefore(cardContexto, document.getElementById('contextos').firstChild);
+            document.getElementById('contextos').insertBefore(cardContexto, document.getElementById('contextos').firstChild);            
         } else {
             // Se não formou um contexto, faz os últimos 4 botões piscarem em vermelho
             ultimasQuatroSelecionadas.forEach(palavra => {
