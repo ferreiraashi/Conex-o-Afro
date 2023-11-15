@@ -22,7 +22,7 @@ body {
 
 button {
     margin: 0px;
-    padding: 35px 70px; /* Aumentei o padding para botões maiores */
+    padding: 35px 70px; /* padding para botões maiores */
     font-size: 18px;
     background-color: #3d3d66;
     color: #fff;
@@ -52,7 +52,7 @@ button:hover {
     background-color: #ecf0f1;
     border: 1px solid #bdc3c7;
     border-radius: 20px;
-    padding: 20px; /* Ajustei o padding para espaçamento interno */
+    padding: 20px; /* padding para espaçamento interno */
     margin-bottom: 20px;
     text-align: center; /* Centraliza o texto */
     min-height: 100px; /* Altura mínima do card */
